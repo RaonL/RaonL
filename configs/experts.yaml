@@ -1,0 +1,55 @@
+experts:
+  - id: f1
+    name: "F1-기획/전략 전문가"
+    scope:
+      - 목표정의
+      - KPI설계
+      - 로드맵
+    route_when:
+      intents: ["planning", "strategy", "roadmap"]
+      keywords: ["전략", "기획", "로드맵", "우선순위", "KPI"]
+
+  - id: f2
+    name: "F2-데이터/분석 전문가"
+    scope:
+      - 지표분석
+      - 실험설계
+      - 리포트
+    route_when:
+      intents: ["analysis", "experiment", "metrics"]
+      keywords: ["분석", "A/B", "지표", "리텐션", "전환율"]
+
+  - id: f3
+    name: "F3-엔지니어링 전문가"
+    scope:
+      - 아키텍처
+      - API설계
+      - 장애대응
+    route_when:
+      intents: ["architecture", "implementation", "troubleshooting"]
+      keywords: ["구현", "코드", "아키텍처", "배포", "장애"]
+
+  - id: f4
+    name: "F4-운영/프로세스 전문가"
+    scope:
+      - 운영정책
+      - SOP
+      - 자동화
+    route_when:
+      intents: ["operations", "process", "automation"]
+      keywords: ["운영", "프로세스", "SOP", "자동화", "워크플로"]
+
+  - id: f5
+    name: "F5-보안/컴플라이언스 전문가"
+    scope:
+      - 보안정책
+      - 권한관리
+      - 규정준수
+    route_when:
+      intents: ["security", "compliance", "risk"]
+      keywords: ["보안", "권한", "감사", "규정", "컴플라이언스"]
+
+routing:
+  fallback_expert: f3
+  allow_multi_expert: true
+  multi_expert_threshold: 0.72
