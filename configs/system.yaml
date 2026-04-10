@@ -1,0 +1,28 @@
+app:
+  name: f5-expert-system
+  mode: production
+
+runtime:
+  default_language: ko
+  max_tokens: 1200
+  temperature: 0.3
+  timeout_sec: 20
+
+session:
+  remember_user_preferences: true
+  preference_keys:
+    - tone
+    - output_format
+    - verbosity
+    - citation_style
+
+guardrails:
+  require_uncertainty_when_low_confidence: true
+  block_sensitive_data_leakage: true
+  require_actionable_answer: true
+
+observability:
+  log_router_decision: true
+  log_agent_latency: true
+  log_tool_calls: true
+  keep_days: 30
